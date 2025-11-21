@@ -6,6 +6,16 @@ body {
   background-size: 400% 400%;
   animation: gradient 12s ease infinite;
 }
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav a {
+    margin: 10px 0;
+  }
+}
 
 @keyframes gradient {
   0% { background-position: 0% 50%; }
@@ -50,12 +60,14 @@ nav {
   justify-content: space-between;
   align-items: center;
   z-index: 100;
+  flex-wrap: wrap;
 }
 
 nav a {
-  margin-left: 20px;
-  font-weight: bold;
-  color: #fff;
+ margin-left:20px;
+ font-weight:bold;
+ color:#fff;
+ white-space: nowrap;
 }
 
 /* Hero */
