@@ -1,16 +1,18 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import Home from "./pages/Home";
-import NotFound from "./pages/NotFound";
+import { Routes, Route } from 'react-router-dom'
+import Navbar from './components/Navbar'
+import Home from './pages/Home'
+import About from './components/About'
 
-export default function App() {
+function App() {
   return (
-    <Router>
-      <Navbar />
+    <>
+      <Navbar />   {/* ✅ Call your Navbar here */}
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="*" element={<NotFound />} />
+        <Route path="/about" element={<About />} />
       </Routes>
-    </Router>
-  );
+    </>
+  )
 }
+
+export default App
