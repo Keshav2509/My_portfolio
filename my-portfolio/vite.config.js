@@ -2,6 +2,17 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig({
-  base: '/', 
   plugins: [react()],
+  build: {
+    outDir: 'dist',
+  },
+  server: {
+    port: 3000,
+  },
+  // 👇 This is crucial for Vercel to serve index.html on unknown routes
+  resolve: {
+    alias: {
+      '@': '/src',
+    },
+  },
 });
